@@ -1,5 +1,8 @@
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { Wallet, Mail, Lock, ArrowRight, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import api from '../services/api';
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
@@ -12,7 +15,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post('/api/auth/login/', { username: email, password });
+      const response = await api.post('auth/login/', { username: email, password });
       localStorage.setItem('access_token', response.data.access);
       localStorage.setItem('refresh_token', response.data.refresh);
       onLogin();

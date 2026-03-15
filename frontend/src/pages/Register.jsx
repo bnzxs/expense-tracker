@@ -1,5 +1,8 @@
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { Wallet, Mail, Lock, User, ArrowRight, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import api from '../services/api';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +24,7 @@ const Register = () => {
     
     setLoading(true);
     try {
-      await axios.post('/api/auth/register/', {
+      await api.post('auth/register/', {
         username: formData.email,
         email: formData.email,
         password: formData.password
