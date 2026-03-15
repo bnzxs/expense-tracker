@@ -12,7 +12,7 @@ env/
 venv/
 .venv/
 db.sqlite3
-.python-version
+# .python-version
 
 # IDEs
 .vscode/
