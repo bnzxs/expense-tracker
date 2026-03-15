@@ -1,0 +1,22 @@
+{
+  "short_name": "AutoExpense",
+  "name": "AutoExpense - Smart Expense Tracker",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0ea5e9",
+  "background_color": "#ffffff",
+  "description": "Automated financial tracking with email detection."
+}
