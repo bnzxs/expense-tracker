@@ -22,7 +22,9 @@ const Login = ({ onLogin }) => {
       toast.success('Welcome back!');
       navigate('/dashboard');
     } catch (err) {
-      toast.error('Invalid email or password');
+      console.error('Login error:', err);
+      const message = err.response?.data?.detail || err.message || 'Login failed';
+      toast.error(message);
     } finally {
       setLoading(false);
     }

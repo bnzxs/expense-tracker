@@ -8,7 +8,7 @@ django.setup()
 User = get_user_model()
 
 def ensure_superuser():
-    username = os.environ.get('WEB_ADMIN_USERNAME', 'admin')
+    username = os.environ.get('WEB_ADMIN_USERNAME', 'admin@example.com')
     email = os.environ.get('WEB_ADMIN_EMAIL', 'admin@example.com')
     password = os.environ.get('WEB_ADMIN_PASSWORD', 'admin123')
 
