@@ -1,1 +1,1 @@
-web: python manage.py migrate && python ensure_admin.py && gunicorn autoexpense.wsgi
+web: python manage.py migrate && python manage.py collectstatic --no-input && python ensure_admin.py && gunicorn autoexpense.wsgi
