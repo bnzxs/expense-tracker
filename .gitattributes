@@ -1,0 +1,14 @@
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Force LF for all text files (standard for Linux/macOS/Render)
+* text eol=lf
+
+# Keep binary files as-is
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.sqlite3 binary

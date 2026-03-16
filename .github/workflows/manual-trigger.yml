@@ -1,0 +1,31 @@
+name: Manual Build Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for running the workflow'
+        required: false
+        default: 'Manual trigger'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install Dependencies
+        run: |
+          cd backend
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Run Tests
+        run: |
+          cd backend
+          python manage.py test
